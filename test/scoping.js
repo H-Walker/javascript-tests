@@ -4,7 +4,7 @@ describe('scoping', function () {
         request;
 
     request = function (callback) {
-      return callback();
+      return eval('this.' + callback)();
     };
 
     function Module () {
